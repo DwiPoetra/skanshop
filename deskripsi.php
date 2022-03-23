@@ -11,7 +11,7 @@ include("koneksi.php");
     
     $lokasifoto='image/';
     $namafoto = "";
-    if(isset($_FILES['tfoto']['name'])) {
+    if(isset($_FILES['tfoto']['name']) && $_FILES['tfoto']['name']) {
       $namafoto=@$_FILES['tfoto']['name'];
         $cekshell = explode('.', $_FILES["tfoto"]["name"]);
         if (!in_array(pathinfo($_FILES['tfoto']['name'],PATHINFO_EXTENSION), $alow_type_file)) {  
